@@ -1,0 +1,184 @@
+/* Dot Match site: static pages, no scripts, no external requests. Colors from the game's palette. */
+:root {
+  --bg: #09090f;
+  --panel: #12121c;
+  --line: #23233a;
+  --text: #e6e8f0;
+  --muted: #9a9db0;
+  --accent: #00ffcc;
+  --pink: #ff3366;
+  --purple: #aa44ff;
+  --blue: #3399ff;
+  --gold: #ffcc00;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(0, 255, 204, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: var(--text);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header.site {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+header.site .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.brand {
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 16px;
+  font-size: 15px;
+}
+nav a:first-child { margin-left: 0; }
+nav a:hover, nav a[aria-current="page"] { color: var(--accent); }
+
+main { padding: 32px 0 48px; }
+
+h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 0 0 6px;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 36px 0 8px;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 17px;
+  margin: 24px 0 6px;
+}
+
+p, ul, ol { margin: 0 0 14px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+
+a { color: var(--accent); }
+
+.meta { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+.card > :last-child { margin-bottom: 0; }
+
+.summary li::marker { color: var(--accent); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 16px;
+  font-size: 15px;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+th { color: var(--muted); font-weight: 600; }
+
+.table-scroll { overflow-x: auto; }
+
+details {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin: 10px 0;
+  padding: 0 18px;
+}
+details[open] { padding-bottom: 6px; }
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 14px 0;
+}
+summary::marker { color: var(--accent); }
+
+.mail {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  word-break: break-all;
+}
+
+/* Landing page */
+.hero { text-align: center; padding: 40px 0 16px; }
+.dots { display: flex; justify-content: center; gap: 14px; margin-bottom: 28px; }
+.dots span {
+  width: 22px; height: 22px; border-radius: 50%;
+  box-shadow: 0 0 14px currentColor;
+  background: currentColor;
+}
+.hero h1 {
+  font-size: 44px;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(0, 255, 204, 0.55);
+}
+.tagline { color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; font-size: 13px; }
+.links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.button:hover { background: rgba(0, 255, 204, 0.1); }
+
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 20px 0 32px;
+  color: var(--muted);
+  font-size: 14px;
+}
+footer.site a { color: var(--muted); }
+
+@media (max-width: 480px) {
+  h1 { font-size: 25px; }
+  .hero h1 { font-size: 34px; }
+  th, td { padding: 8px; }
+}
